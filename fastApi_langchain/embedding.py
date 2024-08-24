@@ -4,7 +4,7 @@ from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 from langchain_postgres import PGVector
 from langchain_postgres.vectorstores import PGVector
-from .db import DATABASE_URL
+from .db import DATABASE_URL, VECTOR_DB_TABLE_NAME
 
 LLAMA_KEY = config("LLAMA_API_KEY")
 LLM_MODEL = config("LLM_MODEL")
@@ -13,7 +13,7 @@ llm = ChatGroq( model=LLM_MODEL, api_key=LLAMA_KEY)
 
 embeddings = HuggingFaceEmbeddings(model=EMBEDDING_MODEL)
 
-collection_name = "my_docs"
+collection_name = VECTOR_DB_TABLE_NAME
 
 
 vector_store = PGVector(

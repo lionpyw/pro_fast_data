@@ -1,10 +1,12 @@
+asyncpg
 python-decouple
 pgvector
 psycopg[binary]
 torch --index-url https://download.pytorch.org/whl/cpulangchain
 groq
-langchain-groq
 langserve[all]
+langchain-groq
+langchain_postgres
 langchain-community
 langchain-huggingface
 jupyter

@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_asyn
 
 
 DATABASE_URL = config("DATABASE_URL")
-VECTOR_DB_TABLE_NAME = ""
+VECTOR_DB_TABLE_NAME = "vector_db"
 VECTOR_DB_NAME = "langchain"
 engine = create_async_engine(DATABASE_URL, echo=True)
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
