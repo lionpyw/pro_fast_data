@@ -4,14 +4,14 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
 
-DATABASE_URL = config("DATABASE_URL")
+DATABASE_URL = config("DATABASE_URL2")
 VECTOR_DB_TABLE_NAME = "vector_db"
 VECTOR_DB_NAME = "langchain"
 engine = create_async_engine(DATABASE_URL, echo=True)
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
 
 def init_vector_db():
-    global DATABASE_URL
+    DATABASE_URL = config("DATABASE_URL")
     db_url = DATABASE_URL
     vector_db_name = VECTOR_DB_NAME
     vector_db_name = VECTOR_DB_TABLE_NAME
@@ -29,3 +29,4 @@ async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
     async with async_session_maker() as session:
         yield session
 
+init_vector_db()
