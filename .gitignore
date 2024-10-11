@@ -163,3 +163,4 @@ cython_debug/
 
 */ex/
 groq*.py
+etc/
