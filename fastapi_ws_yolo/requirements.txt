@@ -1,0 +1,6 @@
+python-decouple
+torch --index-url https://download.pytorch.org/whl/cpulangchain
+fastapi
+uvicorn
+transformers[torch]
+Pillow
