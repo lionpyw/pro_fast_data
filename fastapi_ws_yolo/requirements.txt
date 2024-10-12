@@ -1,6 +1,7 @@
 python-decouple
 torch --index-url https://download.pytorch.org/whl/cpulangchain
 fastapi
-uvicorn
+uvicorn[standard]
 transformers[torch]
 Pillow
+python-multipart
